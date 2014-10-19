@@ -1,0 +1,72 @@
+.town{
+  position: relative;
+}
+
+.row > div{
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  margin: 0;
+  /*border: 1px solid black;*/
+}
+
+.grass{background-color: rgb(14, 51, 7);}
+.road{background-color: black;position: relative;}
+.road.down:after, .road.left:after{
+  content: ' ';
+  width: 1px;
+  height: 50px;
+  border-left: 1px dashed white;
+  display: block;
+  margin-left: 25px;
+}
+.road.left:after{
+  width: 50px;
+  height: 1px;
+  border-top: 1px dashed white;
+  margin-left: 0;
+  margin-top: 25px;
+}
+
+.car{
+  position: absolute;
+  z-index: 11;
+  width: 20px;
+  height: 10px;
+  background-color: blue;
+}
+
+.trafficLight{
+  position: absolute;
+  z-index: 10;
+  width: 5px;
+  height: 5px;
+}
+
+.trafficLight.N, .trafficLight.S{
+  width: 25px;
+}
+
+.trafficLight.E, .trafficLight.W{
+  height: 25px;
+}
+
+.trafficLight.N{
+  left: 0;
+  top: -5px;
+}
+
+.trafficLight.E{
+  right: -5px;
+  top: 0;
+}
+
+.trafficLight.S{
+  right: 0;
+  bottom: -5px;
+}
+
+.trafficLight.W{
+  bottom: 0;
+  left: -5px;
+}
